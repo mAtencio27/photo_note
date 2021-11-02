@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>Film type:</strong>
+  <%= @entry.film_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @entry.name %>
+</p>
+
+<p>
+  <strong>Iso:</strong>
+  <%= @entry.iso %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @entry.location %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @entry.notes %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

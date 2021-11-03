@@ -4,20 +4,17 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-          </a>
-          <span class="navbar-burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+          <%= link_to root_path, class: "navbar-item" do%>
+            <span class="has-textweight-bold is-size-4 ml-4">PhotoNote</span>
+          <%end%>
+          
+          <span class="navbar-item">
+                <%= link_to "New entry", new_entry_path, class: "button is_success"%>
+            </span>
+          
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-            <span class="navbar-item">
-                <%= link_to "New entry", new_entry_path, class: "button is-success"%>
-            </span>
           </div>
         </div>
       </div>
@@ -31,7 +28,7 @@
         <% if content_for(:title)%>
             <%= yield :title%>
         <% else %>
-            Journal
+            Notes
         <% end %>
       </p>
     </div>

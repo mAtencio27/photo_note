@@ -14,17 +14,17 @@
   </head>
 
   <body>
-  <% render "shared/header" %>
-    <% if notice.present? %>
-      <div class="notification is-link is-light"><%= notice %></div>
-    <% end %>
+    <%= render "shared/header" %>
+      <% if notice.present? %>
+        <div class="notification is-link is-light"><%= notice %></div>
+      <% end %>
 
-    <% if alert.present? %>
-      <div class="notification is-danger is-light"><%= alert %></div>
-    <% end %>
+      <% if alert.present? %>
+        <div class="notification is-danger is-light"><%= alert %></div>
+      <% end %>
 
-    <div>
-      <%= yield %>
-    </div>
+      <div>
+        <%= yield %>
+      </div>
   </body>
 </html>

@@ -1,6 +1,8 @@
 <% content_for :title do %>
   Notes &ndash; <%= DateTime.now.to_s(:nice_date) %> 
-  <br/><span class="navbar item"><%= link_to 'New Entry', new_entry_path, class:"button is-danger" %></span>
+  <%if user_signed_in? %>
+    <br/><span class="navbar item"><%= link_to 'New Entry', new_entry_path, class:"button is-danger" %></span>
+  <%end%>
 <% end %>
 
 <!-- devise helper to render sign in view-->

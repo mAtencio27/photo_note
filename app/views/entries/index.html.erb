@@ -1,5 +1,6 @@
 <% content_for :title do %>
-  Notes &ndash; <%= DateTime.now.to_s(:nice_date) %>
+  Notes &ndash; <%= DateTime.now.to_s(:nice_date) %> 
+  <br/><span class="navbar item"><%= link_to 'New Entry', new_entry_path, class:"button is-success" %></span>
 <% end %>
 
 <div class="columns mt-6 is-centered">

@@ -1,34 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="columns mt-6 is-centered">
+  <div class="column is-one-third">
+    <nav class="">
+      <p class="panel-heading">
+        <strong></strong>
+        <%= @entry.title %>
+      </p>
+      <div class="panel-block">
+        Brand:  
+        <%= @entry.film_type %>
+      </div>
+      <div class="panel-block">
+        Name: 
+        <%= @entry.name %>
+      </div>
+      <div class="panel-block">
+        ISO: 
+        <%= @entry.iso %>
+      </div>
+      <div class="panel-block">
+        Location Shot: 
+        <%= @entry.location %>
+      </div>
+      <div class="panel-block">
+        Notes: 
+        <%= @entry.notes %>
+      </div>
+    </nav>
 
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
 
-<p>
-  <strong>Film type:</strong>
-  <%= @entry.film_type %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @entry.name %>
-</p>
-
-<p>
-  <strong>Iso:</strong>
-  <%= @entry.iso %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @entry.location %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @entry.notes %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+    <div class="columns is-mobile">
+      <div class="column">
+        <%= link_to 'Edit', edit_entry_path(@entry), class: "button is-gray" %> 
+        <%= link_to 'Delete', entries_path(@entry), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-gray" %>
+        <%= link_to 'Home', entries_path(@entry), class: "button is-gray" %>
+      </div>
+    </div>
+  <div>
+</div>

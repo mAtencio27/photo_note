@@ -3,33 +3,37 @@
   <br/><span class="navbar item"><%= link_to 'New Entry', new_entry_path, class:"button is-danger" %></span>
 <% end %>
 
-<div class="columns mt-6 is-centered">
-    <% @entries.each do |entry| %>
-      <div class="column is-one-quarter is-centered">
-        <div class="card">
-          <header class="card-header">
-            <p class="card-header-title"><%=entry.title%></p>
-          </header>
-          <div class="card-content">
-            <div class ="content">
-              <p>Brand: <span class="has-text-weight-bold"><%= entry.film_type %></span></p>
-              <p>Name: <span class="has-text-weight-bold"><%= entry.name %></span></p>
-              <p>ISO: <span class="has-text-weight-bold"><%= entry.iso %></span></p>
-              <p>Location shot: <span class="has-text-weight-bold"><%= entry.location %></span></p>
-              <p>Notes: <span class="has-text-weight-bold"><%= entry.notes %></span></p>
-              <p class="italic">Logged <%= time_ago_in_words(entry.created_at)%> ago</p>
+<!-- devise helper to render sign in view-->
+<%if user_signed_in? %>
+
+  <div class="columns mt-6 is-centered">
+      <% @entries.each do |entry| %>
+        <div class="column is-one-quarter is-centered">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title"><%=entry.title%></p>
+            </header>
+            <div class="card-content">
+              <div class ="content">
+                <p>Brand: <span class="has-text-weight-bold"><%= entry.film_type %></span></p>
+                <p>Name: <span class="has-text-weight-bold"><%= entry.name %></span></p>
+                <p>ISO: <span class="has-text-weight-bold"><%= entry.iso %></span></p>
+                <p>Location shot: <span class="has-text-weight-bold"><%= entry.location %></span></p>
+                <p>Notes: <span class="has-text-weight-bold"><%= entry.notes %></span></p>
+                <p class="italic">Logged <%= time_ago_in_words(entry.created_at)%> ago</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <%= link_to 'Show', entry, class: "card-footer-item" %>
+              <%= link_to 'Edit', edit_entry_path(entry), class: "card-footer-item" %>
+              <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
             </div>
           </div>
-          <div class="card-footer">
-            <%= link_to 'Show', entry, class: "card-footer-item" %>
-            <%= link_to 'Edit', edit_entry_path(entry), class: "card-footer-item" %>
-            <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
-          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 
-<br>
+  <br>
 
-<%= link_to 'New Entry', new_entry_path %>
+  <%= link_to 'New Entry', new_entry_path %>
+<%end%>

@@ -7,13 +7,27 @@
           <%= link_to root_path, class: "navbar-item" do%>
             <span class="has-textweight-bold is-size-4 ml-4">PhotoNote</span>
           <%end%>
+          <!-- User Authentication sign up-->
+          <%= link_to new_user_registration_path, class: "navbar-item" do%>
+            <span class="has-textweight-bold is-size-4 ml-4">Sign Up</span>
+          <%end%>
+          <!-- User Authentication sign in-->
+            <%= link_to new_user_session_path, class: "navbar-item" do%>
+              <span class="has-textweight-bold is-size-4 ml-4">Log In</span>
+            <%end%>
+          <%if user_signed_in? %>
+            <!-- User Authentication sign in-->
+            <%= link_to destroy_user_session_path, method: :delete, class: "navbar-item" do%>
+              <span class="has-textweight-bold is-size-4 ml-4">Sign Out</span>
+            <%end%>
+          <%end%>
           
     
           
         </div>
         <div id= "navbarMenuHero" class="navbar-menu">
             <div class="navbar-end">
-                <%= link_to "New entry", new_entry_path, class: "button is_success"%>
+                  <%= link_to "New entry", new_entry_path, class: "button is_success"%>
             <div>
           </div>
         </div>

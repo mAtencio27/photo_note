@@ -45,6 +45,13 @@
     <%= form.text_field :notes, class: "input" %>
   </div>
 
+  <!-- invisable user ID-->
+  <div class="field">
+    <%= form.number_field :user_id, id: :entry_user_id, class: "input",
+        value: current_user.id, type: :hidden %>
+  </div>
+  <!----------------------->
+
   <div class="actions">
     <%= form.submit class: "button is-danger" %>
   </div>

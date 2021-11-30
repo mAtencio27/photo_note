@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is ready for deployment using heroku.
 
-Things you may want to cover:
+photonote is a note taking app made for film photographers. It enables photographers to take notes in their enviroments without having to bring a notebook along with all of their camera gear. They are able to log all of the details of the film they are using and any field notes they may have. 
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+Ensure you have the following requirements.
 
-* Configuration
+* You have installed the latest version of Ruby.
+* Understanding of Ruby and Ruby on Rails archetecture. 
 
-* Database creation
+## Installation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

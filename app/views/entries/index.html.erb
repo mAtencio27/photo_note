@@ -1,14 +1,14 @@
 <% content_for :title do %>
   Notes <br/> <%= DateTime.now.to_s(:nice_date) %> 
   <%if user_signed_in? %>
-    <br/><span class="navbar item"><%= link_to 'New Entry', new_entry_path, class:"button is-danger" %></span>
+    <br/><span class="has-text-centered"><%= link_to 'New Entry', new_entry_path, class:"button is-danger mt-3" %></span>
   <%end%>
 <% end %>
 
 <!-- devise helper to render sign in view-->
 <%if user_signed_in? %>
 
-  <div class="columns mt-6 is-centered">
+  <div class="columns mt-6 is-centered is-multiline">
       <% @entries.each do |entry| %>
         <!-- now render only for the specific user-->
         <%if current_user.id == entry.user_id%>
@@ -37,8 +37,15 @@
        <%end%>
       <% end %>
     </div>
+    <style>
+    .column.my-class {
+        display: inline-flex; 
+    }
+
+    .column.my-class > div {
+        width: 100%; // only Edge needed this nonsense
+    }
+</style>
 
   <br>
-
-  <%= link_to 'New Entry', new_entry_path %>
 <%end%>
